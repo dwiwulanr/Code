@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+    <!-- CDN Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        #search-input {
+            animation: searchFade 0.2s ease;
+        }
+
+        @keyframes searchFade {
+            from {
+                opacity: 0;
+                transform: translateX(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+    <title>Bardukari - Banjaranyar Daur Ulang & Kreasi</title>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- MAIN CONTAINER -->
+    <div class="h-screen flex flex-col overflow-hidden p-2 md:px-6 md:py-3 bg-white">
+
+        <!-- 1. NAVBAR / HEADER -->
+        <header class="w-full px-2 py-2 md:py-3 flex items-center justify-between gap-4 bg-white flex-shrink-0">
+
+            <!-- LOGO -->
+            <div class="flex-shrink-0">
+                <h1 class="text-2xl font-black text-[#2D8659] leading-none tracking-tight">
+                    BARDUKARI
+                </h1>
+
+                <p class="text-[8px] font-bold text-[#5CB883] tracking-widest uppercase mt-0.5">
+                    Banjaranyar Daur Ulang & Kreasi
+                </p>
+            </div>
+
+            <!-- NAVIGASI MENU -->
+            <nav class="hidden md:flex items-center space-x-5 lg:space-x-6 text-sm font-semibold text-gray-600 flex-shrink-0 lg:ml-12">
+                <a href="bardukari.html" class="text-[#2D8659]">Beranda</a>
+                <a href="edukasi.html" class="hover:text-[#2D8659] transition">Edukasi</a>
+                <a href="#package" class="hover:text-[#2D8659] transition">Katalog</a>
+                <a href="#contact" class="hover:text-[#2D8659] transition">Kontak</a>
+                <a href="#about" class="hover:text-[#2D8659] transition">Tentang Kami</a>
+            </nav>
+
+            <!-- SEARCH DAN TOMBOL SHOPEE -->
+            <div class="hidden md:flex items-center gap-3 flex-1 min-w-0">
+
+                <!-- AREA SEARCH: TOMBOL DAN INPUT DI POSISI YANG SAMA -->
+                <div class="flex-1 min-w-0">
+
+                    <!-- TOMBOL SEARCH AWAL -->
+                    <button
+                        id="search-btn"
+                        type="button"
+                        aria-label="Buka pencarian"
+                        aria-expanded="false"
+                        class="w-full flex items-center justify-start gap-3 px-5 py-2.5 rounded-full border border-gray-300 bg-gray-50 text-gray-500 hover:border-[#2D8659] hover:bg-emerald-50 transition text-sm"
+                    >
+                        <i class="ri-search-line text-xl"></i>
+                        <span>Cari...</span>
+                    </button>
+
+                    <!-- INPUT MENGGANTIKAN TOMBOL DI TEMPAT YANG SAMA -->
+                    <form id="search-form" class="hidden w-full relative">
+                        <i class="ri-search-line text-lg text-[#2D8659] absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+
+                        <input
+                            id="search-input"
+                            type="search"
+                            placeholder="Cari informasi..."
+                            autocomplete="off"
+                            class="w-full pl-11 pr-10 py-2.5 rounded-full border border-[#2D8659] bg-white text-gray-700 text-sm outline-none focus:ring-2 focus:ring-[#2D8659]/20"
+                        />
+
+                        <button
+                            id="close-search"
+                            type="button"
+                            aria-label="Tutup pencarian"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-red-500"
+                        >
+                            <i class="ri-close-line text-xl"></i>
+                        </button>
+                    </form>
+
+                </div>
+
+                <!-- TOMBOL BELI DI SHOPEE -->
+                <a
+                    href="https://shopee.co.id/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-shrink-0 bg-[#2D8659] text-white px-5 py-2.5 rounded-full font-bold hover:bg-[#1E6240] transition items-center gap-2 text-sm shadow-md"
+                >
+                    <i class="ri-shopping-bag-3-line"></i>
+                    Beli di Shopee
+                </a>
+
+            </div>
+
+            <!-- MENU MOBILE -->
+            <button
+                class="md:hidden flex items-center gap-2 text-gray-700 hover:text-[#2D8659] p-2"
+                id="menu-btn"
+                aria-label="Buka Menu"
+                type="button"
+            >
+                <i class="ri-menu-line text-2xl"></i>
+            </button>
+
+        </header>
+
+        <!-- HASIL PENCARIAN -->
+        <p id="search-result" class="hidden text-xs text-gray-500 text-right px-4 py-1 flex-shrink-0"></p>
+
+        <!-- 2. HERO LANDING CARD -->
+        <main id="home" class="w-full flex-1 min-h-0 my-1 flex flex-col overflow-hidden">
+
+            <div class="w-full h-full min-h-0 rounded-[2rem] md:rounded-[2.5rem] bg-[linear-gradient(to_bottom,#D4F0E0_0%,#EBF8F1_45%,white_85%)] p-4 sm:p-5 md:p-8 lg:p-10 flex items-center relative overflow-hidden shadow-sm">
+
+                <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-3 md:gap-4 lg:gap-6 relative z-10">
+
+                    <!-- TEKS UTAMA (KIRI) -->
+                    <div class="md:col-span-7 flex flex-col justify-center text-left translate-y-6">
+
+                        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#5CB883] uppercase tracking-tight leading-none">
+                            BARDUKARI
+                        </h1>
+
+                        <p class="text-[7px] sm:text-xs md:text-sm font-bold text-[#2D8659] tracking-widest uppercase mt-2 md:mt-3">
+                            Banjaranyar Daur Ulang & Kreasi
+                        </p>
+
+                        <p class="text-[4px] sm:text-xs md:text-sm lg:text-base font-normal text-[#426B56] leading-relaxed mt-3 md:mt-4 max-w-[530px]">
+                            Bardukari hadir sebagai platform edukasi dan penjualan digital yang mengajak masyarakat Desa Banjaranyar mengolah sampah menjadi produk kreatif bernilai guna dan bernilai jual. Melalui edukasi daur ulang dan pemasaran digital, kami ingin membangun lingkungan yang lebih bersih sekaligus membuka peluang usaha bagi masyarakat.
+                        </p>
+
+                        <!-- TOMBOL CTA -->
+                        <div class="mt-4 md:mt-5 flex flex-wrap items-center gap-3">
+
+                            <a
+                                href="edukasi.html"
+                                class="bg-[#2D8659] text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-[#1E6240] transition shadow-md inline-flex items-center gap-2"
+                            >
+                                Edukasi
+                                <i class="ri-arrow-right-line text-lg"></i>
+                            </a>
+
+                            <a
+                                href="https://shopee.co.id/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="md:hidden bg-white text-[#2D8659] border border-[#2D8659] px-4 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold hover:bg-emerald-50 transition"
+                            >
+                                Beli di Shopee
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- FOTO WARGA (KANAN) -->
+                    <div class="hidden md:flex md:col-span-5 h-full min-h-0 justify-end items-end overflow-visible translate-x-[150px] -translate-y-8">
+
+                        <img
+                            src="fotofelda.png"
+                            alt="Foto Warga Banjaranyar"
+                            class="h-[75vh] w-auto max-w-none object-contain object-bottom"
+                        />
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- 3. FOOTER -->
+        <footer class="w-full text-center py-1.5 md:py-2 text-[9px] md:text-xs text-gray-500 flex-shrink-0">
+            © 2026 Bardukari - Telkom University Purwokerto. All rights reserved.
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT SEARCH -->
+    <script>
+        const searchBtn = document.getElementById('search-btn');
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const closeSearch = document.getElementById('close-search');
+        const searchResult = document.getElementById('search-result');
+
+        // Buka input di posisi tombol search
+        searchBtn.addEventListener('click', () => {
+            searchBtn.classList.add('hidden');
+            searchForm.classList.remove('hidden');
+
+            searchBtn.setAttribute('aria-expanded', 'true');
+
+            searchInput.focus();
+        });
+
+        // Tutup input dan kembalikan tombol search
+        function closeSearchInput() {
+            searchForm.classList.add('hidden');
+            searchBtn.classList.remove('hidden');
+
+            searchBtn.setAttribute('aria-expanded', 'false');
+
+            searchInput.value = '';
+            searchResult.classList.add('hidden');
+            searchResult.textContent = '';
+        }
+
+        closeSearch.addEventListener('click', closeSearchInput);
+
+        // Tutup input dengan tombol Escape
+        searchInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeSearchInput();
+            }
+        });
+
+        // Cari teks yang tersedia di halaman
+        searchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const keyword = searchInput.value.trim().toLowerCase();
+
+            if (!keyword) {
+                searchInput.focus();
+                return;
+            }
+
+            const searchableElements = document.querySelectorAll(
+                '#home h1, #home p, #home a, header nav a'
+            );
+
+            let foundElement = null;
+
+            searchableElements.forEach((element) => {
+                if (
+                    !foundElement &&
+                    element.textContent.toLowerCase().includes(keyword)
+                ) {
+                    foundElement = element;
+                }
+            });
+
+            searchResult.classList.remove('hidden');
+
+            if (foundElement) {
+                searchResult.textContent =
+                    'Ditemukan: ' + foundElement.textContent.trim();
+
+                foundElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+
+                foundElement.style.outline = '2px solid #5CB883';
+                foundElement.style.outlineOffset = '4px';
+
+                setTimeout(() => {
+                    foundElement.style.outline = '';
+                    foundElement.style.outlineOffset = '';
+                }, 2500);
+            } else {
+                searchResult.textContent =
+                    'Kata kunci belum ditemukan di halaman ini.';
+            }
+        });
+
+        // Menu mobile
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            alert('Menu mobile belum diaktifkan.');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edukasi - BARDUKARI</title>
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Poppins -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #2D8659;
+        }
+
+        .education-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(45, 134, 89, 0.12);
+        }
+
+        section[id] {
+            scroll-margin-top: 90px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="w-full px-4 md:px-8 py-4 flex items-center justify-between gap-4 bg-white shadow-sm sticky top-0 z-50">
+
+        <!-- LOGO -->
+        <a href="bardukari.html" class="flex-shrink-0">
+            <h1 class="text-2xl font-black text-[#2D8659] leading-none tracking-tight">
+                BARDUKARI
+            </h1>
+
+            <p class="text-[8px] font-bold text-[#5CB883] tracking-widest uppercase mt-1">
+                Banjaranyar Daur Ulang & Kreasi
+            </p>
+        </a>
+
+        <!-- MENU NAVIGASI -->
+        <nav class="hidden md:flex items-center space-x-5 lg:space-x-6 text-sm font-semibold text-gray-600">
+
+            <a href="bardukari.html#home" class="nav-link">
+                Beranda
+            </a>
+
+            <a href="edukasi.html" class="text-[#2D8659]">
+                Edukasi
+            </a>
+
+            <a href="bardukari.html#package" class="nav-link">
+                Katalog
+            </a>
+
+            <a href="bardukari.html#contact" class="nav-link">
+                Kontak
+            </a>
+
+            <a href="bardukari.html#about" class="nav-link">
+                Tentang Kami
+            </a>
+
+        </nav>
+
+        <!-- SEARCH DAN SHOPEE -->
+        <div class="hidden md:flex items-center gap-3">
+
+            <button
+                id="search-btn"
+                type="button"
+                aria-label="Buka pencarian"
+                class="flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 text-gray-500 hover:border-[#2D8659] transition text-sm"
+            >
+                <i class="ri-search-line text-lg"></i>
+                <span>Cari...</span>
+            </button>
+
+            <a
+                href="https://shopee.co.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-[#2D8659] text-white px-5 py-2.5 rounded-full font-bold hover:bg-[#1E6240] transition text-sm whitespace-nowrap"
+            >
+                <i class="ri-shopping-bag-3-line mr-1"></i>
+                Beli di Shopee
+            </a>
+
+        </div>
+
+        <!-- MENU MOBILE -->
+        <button
+            id="menu-btn"
+            type="button"
+            aria-label="Buka menu"
+            class="md:hidden text-gray-700 p-2"
+        >
+            <i class="ri-menu-line text-2xl"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================= PENCARIAN ================= -->
+    <div id="search-panel" class="hidden px-6 py-4 bg-white border-b border-gray-100">
+        <form id="search-form" class="max-w-xl mx-auto flex gap-2">
+
+            <input
+                id="search-input"
+                type="search"
+                placeholder="Cari materi edukasi..."
+                class="flex-1 min-w-0 px-4 py-3 rounded-full border border-gray-300 text-sm outline-none focus:border-[#2D8659]"
+            >
+
+            <button
+                type="submit"
+                class="bg-[#2D8659] text-white px-5 py-3 rounded-full font-semibold"
+            >
+                Cari
+            </button>
+
+        </form>
+    </div>
+
+    <p id="search-result" class="hidden text-sm text-gray-500 text-center px-4 py-3"></p>
+
+
+    <!-- ================= MENU MOBILE ================= -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-4">
+
+        <a href="berdukari.html#home" class="block font-semibold text-gray-700">
+            Beranda
+        </a>
+
+        <a href="edukasi.html" class="block font-semibold text-[#2D8659]">
+            Edukasi
+        </a>
+
+        <a href="berdukari.html#package" class="block font-semibold text-gray-700">
+            Katalog
+        </a>
+
+        <a href="berdukari.html#contact" class="block font-semibold text-gray-700">
+            Kontak
+        </a>
+
+        <a href="berdukari.html#about" class="block font-semibold text-gray-700">
+            Tentang Kami
+        </a>
+
+        <a href="https://shopee.co.id/" target="_blank" rel="noopener noreferrer"
+           class="block font-semibold text-[#2D8659]">
+            <i class="ri-shopping-bag-3-line mr-1"></i>
+            Beli di Shopee
+        </a>
+
+    </nav>
+
+
+    <!-- ================= HERO EDUKASI ================= -->
+    <section id="home" class="bg-[linear-gradient(to_bottom,#D4F0E0_0%,#EBF8F1_55%,white_100%)] py-16 md:py-24">
+
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <span class="inline-flex items-center gap-2 bg-white text-[#2D8659] px-5 py-2 rounded-full text-sm font-semibold shadow-sm mb-6">
+                <i class="ri-leaf-line text-lg"></i>
+                Edukasi Lingkungan
+            </span>
+
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-[#2D8659] leading-tight mb-6">
+                Yuk, Kenali dan Kelola Sampah!
+            </h2>
+
+            <p class="max-w-3xl mx-auto text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed mb-8">
+                Sampah yang tidak dikelola dengan baik dapat mencemari
+                lingkungan dan mengganggu kesehatan. Dengan memahami
+                jenis sampah serta cara pengolahannya, kita bisa mulai
+                menciptakan lingkungan yang lebih bersih dari kebiasaan
+                sederhana sehari-hari.
+            </p>
+
+            <a href="#jenis-sampah"
+               class="inline-flex items-center gap-2 bg-[#2D8659] text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-[#1E6240] transition shadow-md">
+                Mulai Belajar
+                <i class="ri-arrow-down-line text-lg"></i>
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- ================= JENIS SAMPAH ================= -->
+    <section id="jenis-sampah" class="py-16 md:py-20">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+                <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest">
+                    Kenali Sampah
+                </p>
+
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mt-3 mb-4">
+                    Jenis-Jenis Sampah
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-gray-500 text-sm md:text-base leading-relaxed">
+                    Mengenali jenis sampah adalah langkah awal untuk
+                    menentukan cara pengelolaan yang tepat.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+                <!-- ORGANIK -->
+                <article class="education-card border border-green-100 rounded-3xl overflow-hidden bg-white shadow-sm">
+
+                    <div class="h-44 bg-green-50 flex items-center justify-center">
+                        <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                            <i class="ri-plant-line text-6xl text-[#2D8659]"></i>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+
+                        <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+                            Mudah Terurai
+                        </span>
+
+                        <h3 class="text-xl font-bold mb-3">
+                            Sampah Organik
+                        </h3>
+
+                        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                            Sampah yang berasal dari makhluk hidup dan dapat
+                            terurai secara alami, seperti sisa makanan,
+                            daun kering, dan kulit buah.
+                        </p>
+
+                        <h4 class="font-bold text-[#2D8659] text-sm mb-3">
+                            Cara Pengolahan
+                        </h4>
+
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><i class="ri-check-line text-green-600 mr-2"></i>Membuat kompos</li>
+                            <li><i class="ri-check-line text-green-600 mr-2"></i>Membuat pupuk organik</li>
+                            <li><i class="ri-check-line text-green-600 mr-2"></i>Mengolah sisa makanan</li>
+                        </ul>
+
+                    </div>
+                </article>
+
+
+                <!-- ANORGANIK -->
+                <article class="education-card border border-blue-100 rounded-3xl overflow-hidden bg-white shadow-sm">
+
+                    <div class="h-44 bg-blue-50 flex items-center justify-center">
+                        <div class="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="ri-recycle-line text-6xl text-blue-700"></i>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+                            Dapat Didaur Ulang
+                        </span>
+
+                        <h3 class="text-xl font-bold mb-3">
+                            Sampah Anorganik
+                        </h3>
+
+                        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                            Sampah seperti botol plastik, kaleng, kaca,
+                            dan bahan lain yang dapat digunakan kembali
+                            atau didaur ulang sesuai fasilitas yang tersedia.
+                        </p>
+
+                        <h4 class="font-bold text-blue-700 text-sm mb-3">
+                            Cara Pengolahan
+                        </h4>
+
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><i class="ri-check-line text-blue-600 mr-2"></i>Menggunakan kembali barang</li>
+                            <li><i class="ri-check-line text-blue-600 mr-2"></i>Membuat kerajinan</li>
+                            <li><i class="ri-check-line text-blue-600 mr-2"></i>Mendaur ulang bahan</li>
+                        </ul>
+
+                    </div>
+                </article>
+
+
+                <!-- SAMPAH B3 -->
+                <article class="education-card border border-amber-100 rounded-3xl overflow-hidden bg-white shadow-sm">
+
+                    <div class="h-44 bg-amber-50 flex items-center justify-center">
+                        <div class="w-24 h-24 rounded-full bg-amber-100 flex items-center justify-center">
+                            <i class="ri-alert-line text-6xl text-amber-600"></i>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+
+                        <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+                            Penanganan Khusus
+                        </span>
+
+                        <h3 class="text-xl font-bold mb-3">
+                            Sampah B3
+                        </h3>
+
+                        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                            Sampah yang mengandung bahan berbahaya dan
+                            beracun, misalnya baterai bekas, lampu tertentu,
+                            dan kemasan bahan kimia berbahaya.
+                        </p>
+
+                        <h4 class="font-bold text-amber-700 text-sm mb-3">
+                            Cara Penanganan
+                        </h4>
+
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><i class="ri-check-line text-amber-600 mr-2"></i>Pisahkan dari sampah biasa</li>
+                            <li><i class="ri-check-line text-amber-600 mr-2"></i>Jangan membakar sampah</li>
+                            <li><i class="ri-check-line text-amber-600 mr-2"></i>Salurkan ke fasilitas sesuai</li>
+                        </ul>
+
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= CARA MEMILAH SAMPAH ================= -->
+    <section id="cara-memilah" class="bg-gray-50 py-16 md:py-20">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+                <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest">
+                    Langkah Sederhana
+                </p>
+
+                <h2 class="text-2xl md:text-4xl font-bold mt-3 mb-4">
+                    Cara Memilah Sampah
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-gray-500 text-sm md:text-base leading-relaxed">
+                    Pemilahan sampah membantu mempermudah proses pengolahan
+                    dan mengurangi sampah yang berakhir di tempat pembuangan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <article class="bg-white rounded-2xl p-6 shadow-sm">
+                    <div class="text-3xl font-black text-[#5CB883] mb-5">01</div>
+                    <h3 class="font-bold text-lg mb-3">Siapkan Wadah</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Siapkan wadah terpisah untuk menampung sampah
+                        berdasarkan jenisnya.
+                    </p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-6 shadow-sm">
+                    <div class="text-3xl font-black text-[#5CB883] mb-5">02</div>
+                    <h3 class="font-bold text-lg mb-3">Pisahkan Jenisnya</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Bedakan sampah organik, anorganik, dan sampah
+                        yang membutuhkan penanganan khusus.
+                    </p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-6 shadow-sm">
+                    <div class="text-3xl font-black text-[#5CB883] mb-5">03</div>
+                    <h3 class="font-bold text-lg mb-3">Siapkan untuk Diolah</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Bersihkan kemasan yang akan didaur ulang jika
+                        diperlukan dan aman dilakukan.
+                    </p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-6 shadow-sm">
+                    <div class="text-3xl font-black text-[#5CB883] mb-5">04</div>
+                    <h3 class="font-bold text-lg mb-3">Kelola dengan Tepat</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Olah sampah yang sesuai dan salurkan sisanya
+                        ke fasilitas pengelolaan sampah yang tepat.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= PRINSIP 3R ================= -->
+    <section id="prinsip-3r" class="py-16 md:py-20">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+                <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest">
+                    Kebiasaan Ramah Lingkungan
+                </p>
+
+                <h2 class="text-2xl md:text-4xl font-bold mt-3 mb-4">
+                    Terapkan Prinsip 3R
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-gray-500 text-sm md:text-base leading-relaxed">
+                    Prinsip 3R membantu mengurangi jumlah sampah melalui
+                    kebiasaan menggunakan barang secara lebih bijak.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+                <!-- REDUCE -->
+                <article class="education-card bg-green-50 rounded-3xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-green-100 flex items-center justify-center">
+                        <i class="ri-shopping-bag-3-line text-4xl text-[#2D8659]"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-[#2D8659] mt-5 mb-3">
+                        Reduce
+                    </h3>
+
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Mengurangi sampah sejak awal, misalnya membawa
+                        botol minum sendiri, menggunakan tas belanja,
+                        dan menghindari barang sekali pakai.
+                    </p>
+                </article>
+
+                <!-- REUSE -->
+                <article class="education-card bg-green-50 rounded-3xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-green-100 flex items-center justify-center">
+                        <i class="ri-loop-left-line text-4xl text-[#2D8659]"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-[#2D8659] mt-5 mb-3">
+                        Reuse
+                    </h3>
+
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Menggunakan kembali barang yang masih layak,
+                        seperti memakai wadah berulang kali atau
+                        memanfaatkan kertas yang masih bisa digunakan.
+                    </p>
+                </article>
+
+                <!-- RECYCLE -->
+                <article class="education-card bg-green-50 rounded-3xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-green-100 flex items-center justify-center">
+                        <i class="ri-recycle-line text-4xl text-[#2D8659]"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-[#2D8659] mt-5 mb-3">
+                        Recycle
+                    </h3>
+
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Mendaur ulang bahan yang sesuai menjadi bahan
+                        atau produk baru melalui proses pengolahan.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+<!-- ================= VIDEO TUTORIAL PENGOLAHAN SAMPAH ================= -->
+<section id="video-tutorial" class="py-16 md:py-20 bg-gray-50">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <!-- JUDUL -->
+        <div class="text-center mb-12">
+            <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest">
+                Belajar dari Video
+            </p>
+
+            <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mt-3 mb-4">
+                Video Tutorial Pengolahan Sampah
+            </h2>
+
+            <p class="max-w-2xl mx-auto text-gray-500 text-sm md:text-base leading-relaxed">
+                Yuk, pelajari cara mengolah sampah menjadi sesuatu yang
+                bermanfaat melalui berbagai tutorial berikut!
+            </p>
+        </div>
+
+
+        <!-- DAFTAR VIDEO -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <!-- VIDEO 1: ECO ENZYME -->
+            <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+
+                <div class="aspect-video bg-black">
+                    <iframe
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/Wo0-q6XIWmY"
+                        title="Cara Membuat Eco Enzyme Praktis di Rumah"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="p-6">
+                    <span class="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1.5 rounded-full">
+                        Sampah Organik
+                    </span>
+
+                    <h3 class="text-lg font-bold text-gray-800 mt-4 mb-3">
+                        Cara Membuat Eco Enzyme
+                    </h3>
+
+                    <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                        Pelajari cara memanfaatkan kulit buah dan sisa
+                        sayuran melalui proses fermentasi untuk membuat
+                        eco enzyme.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/watch?v=Wo0-q6XIWmY"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-[#2D8659] font-semibold text-sm hover:underline"
+                    >
+                        <i class="ri-youtube-fill text-xl"></i>
+                        Tonton di YouTube
+                        <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                </div>
+
+            </article>
+
+
+            <!-- VIDEO 2: TAS DARI BUNGKUS KOPI -->
+            <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+
+                <div class="aspect-video bg-black">
+                    <iframe
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/bDus7YXtOIg"
+                        title="Tutorial Cara Membuat Tas dari Bungkus Kopi"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="p-6">
+                    <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1.5 rounded-full">
+                        Daur Ulang Plastik
+                    </span>
+
+                    <h3 class="text-lg font-bold text-gray-800 mt-4 mb-3">
+                        Membuat Tas dari Bungkus Kopi
+                    </h3>
+
+                    <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                        Simak cara menganyam bungkus kopi bekas menjadi
+                        tas yang unik dan dapat digunakan kembali.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/watch?v=bDus7YXtOIg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-[#2D8659] font-semibold text-sm hover:underline"
+                    >
+                        <i class="ri-youtube-fill text-xl"></i>
+                        Tonton di YouTube
+                        <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                </div>
+
+            </article>
+
+
+            <!-- VIDEO 3: MEMBUAT KOMPOS -->
+            <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+
+                <div class="aspect-video bg-black">
+                    <iframe
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/7zY9gWjBVQM"
+                        title="Cara Membuat Kompos dari Sampah Organik"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="p-6">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-3 py-1.5 rounded-full">
+                        Pengolahan Organik
+                    </span>
+
+                    <h3 class="text-lg font-bold text-gray-800 mt-4 mb-3">
+                        Membuat Kompos dari Sampah Organik
+                    </h3>
+
+                    <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                        Pelajari cara mengolah sisa makanan dan sampah organik
+                        menjadi pupuk kompos yang bermanfaat untuk tanaman.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/watch?v=7zY9gWjBVQM"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-[#2D8659] font-semibold text-sm hover:underline">
+                        <i class="ri-youtube-fill text-xl"></i>
+                        Tonton di YouTube
+                        <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- INFORMASI TAMBAHAN -->
+        <div class="mt-10 bg-green-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-5">
+
+            <div class="w-16 h-16 flex-shrink-0 rounded-full bg-white flex items-center justify-center">
+                <i class="ri-lightbulb-line text-4xl text-[#2D8659]"></i>
+            </div>
+
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-bold text-green-900 mb-2">
+                    Yuk, Praktikkan di Rumah!
+                </h3>
+
+                <p class="text-sm text-green-800 leading-relaxed">
+                    Mulailah dari hal sederhana, seperti memilah sampah,
+                    memanfaatkan kembali kemasan bekas, dan mengolah
+                    sampah organik sesuai panduan yang aman.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+    <!-- ================= PENUTUP ================= -->
+    <section class="bg-[#2D8659] py-16 md:py-20">
+
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <i class="ri-earth-line text-5xl text-green-200"></i>
+
+            <h2 class="text-2xl md:text-4xl font-bold text-white mt-5 mb-5">
+                Lingkungan Bersih Dimulai dari Kita
+            </h2>
+
+            <p class="text-green-50 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                Menjaga lingkungan tidak harus dimulai dari hal besar.
+                Membiasakan diri memilah sampah, mengurangi penggunaan
+                barang sekali pakai, dan menggunakan kembali barang
+                yang masih layak dapat menjadi langkah awal menuju
+                lingkungan yang lebih bersih.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="w-full text-center py-5 px-4 text-xs text-gray-500 border-t border-gray-100">
+
+        © 2026 Bardukari - Telkom University Purwokerto. All rights reserved.
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // Buka dan tutup pencarian
+        const searchBtn = document.getElementById('search-btn');
+        const searchPanel = document.getElementById('search-panel');
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const searchResult = document.getElementById('search-result');
+
+        searchBtn.addEventListener('click', function () {
+            searchPanel.classList.toggle('hidden');
+
+            if (!searchPanel.classList.contains('hidden')) {
+                searchInput.focus();
+            } else {
+                searchInput.value = '';
+                searchResult.classList.add('hidden');
+            }
+        });
+
+        // Pencarian materi edukasi
+        searchForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const keyword = searchInput.value.trim().toLowerCase();
+
+            if (!keyword) {
+                searchInput.focus();
+                return;
+            }
+
+            const sections = document.querySelectorAll('main, section');
+            let found = null;
+
+            sections.forEach(function (section) {
+                if (!found && section.innerText.toLowerCase().includes(keyword)) {
+                    found = section;
+                }
+            });
+
+            searchResult.classList.remove('hidden');
+
+            if (found) {
+                searchResult.textContent = 'Materi ditemukan: ' + searchInput.value;
+                found.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                searchResult.textContent =
+                    'Materi "' + searchInput.value + '" tidak ditemukan.';
+            }
+        });
+
+        // Menu untuk perangkat mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+
+            const icon = menuBtn.querySelector('i');
+
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'ri-menu-line text-2xl';
+            } else {
+                icon.className = 'ri-close-line text-2xl';
+            }
+        });
+    </script>
+
+</body>
+</html>
