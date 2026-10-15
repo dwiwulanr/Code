@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - BARDUKARI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #2D8659;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(45, 134, 89, 0.12);
+        }
+
+        .product-image {
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- NAVBAR -->
+    <header class="w-full bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[88px] flex items-center justify-between gap-6">
+
+            <!-- LOGO -->
+            <a href="bardukari.html" class="flex-shrink-0 leading-none">
+                <h1 class="text-2xl font-black text-[#2D8659]">
+                    BARDUKARI
+                </h1>
+                <p class="text-[8px] font-bold text-[#5CB883] tracking-widest uppercase mt-1">
+                    Banjaranyar Daur Ulang & Kreasi
+                </p>
+            </a>
+
+            <!-- NAVIGASI DESKTOP -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-600 whitespace-nowrap">
+                <a href="bardukari.html#home" class="nav-link py-2">Beranda</a>
+                <a href="edukasi.html" class="nav-link py-2">Edukasi</a>
+                <a href="katalog.html" class="text-[#2D8659] py-2">Katalog</a>
+                <a href="kontak.html" class="nav-link py-2">Kontak</a>
+                <a href="about.html" class="nav-link py-2">Tentang Kami</a>
+            </nav>
+
+            <!-- TOMBOL SHOPEE DESKTOP -->
+            <a
+                href="https://shopee.co.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hidden lg:inline-flex flex-shrink-0 items-center justify-center gap-2 bg-[#2D8659] text-white px-5 py-3 rounded-full font-bold text-sm hover:bg-[#1E6240] transition"
+            >
+                <i class="ri-shopping-bag-3-line"></i>
+                Beli di Shopee
+            </a>
+
+            <!-- TOMBOL MENU MOBILE -->
+            <button
+                id="menu-btn"
+                type="button"
+                aria-label="Buka menu"
+                aria-expanded="false"
+                class="lg:hidden p-2 text-gray-700"
+            >
+                <i class="ri-menu-line text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- NAVIGASI MOBILE -->
+        <nav id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-5 space-y-4">
+            <a href="bardukari.html#home" class="block text-sm font-semibold text-gray-700">Beranda</a>
+            <a href="edukasi.html" class="block text-sm font-semibold text-gray-700">Edukasi</a>
+            <a href="katalog.html" class="block text-sm font-semibold text-[#2D8659]">Katalog</a>
+            <a href="kontak.html" class="block text-sm font-semibold text-gray-700">Kontak</a>
+            <a href="about.html" class="block text-sm font-semibold text-gray-700">Tentang Kami</a>
+
+            <a
+                href="https://shopee.co.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-[#2D8659] text-white px-5 py-3 rounded-full font-bold text-sm hover:bg-[#1E6240] transition"
+            >
+                <i class="ri-shopping-bag-3-line"></i>
+                Beli di Shopee
+            </a>
+        </nav>
+    </header>
+
+    <!-- HERO KATALOG -->
+    <section class="bg-[linear-gradient(to_bottom,#D4F0E0_0%,#EBF8F1_60%,white_100%)] py-16 md:py-20">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+
+            <span class="inline-flex items-center gap-2 bg-white text-[#2D8659] px-4 py-2 rounded-full text-sm font-semibold shadow-sm mb-6">
+                <i class="ri-recycle-line text-lg"></i>
+                Produk Kreatif Banjaranyar
+            </span>
+
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-[#2D8659] leading-tight mb-6">
+                Katalog Produk BARDUKARI
+            </h2>
+
+            <p class="max-w-3xl mx-auto text-gray-600 text-sm md:text-base leading-relaxed mb-8">
+                Dari sampah menjadi karya yang bermanfaat.
+                Temukan berbagai produk kreatif hasil pemanfaatan bahan bekas
+                yang diolah menjadi barang unik dan bernilai guna.
+            </p>
+
+            <a
+                href="#daftar-produk"
+                class="inline-flex items-center gap-2 bg-[#2D8659] hover:bg-[#1E6240] text-white px-7 py-3 rounded-full text-sm font-bold transition shadow-md"
+            >
+                Lihat Produk
+                <i class="ri-arrow-down-line"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- DAFTAR PRODUK -->
+    <section id="daftar-produk" class="py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+                <div>
+                    <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest">
+                        Pilihan Produk
+                    </p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mt-2">
+                        Kreasi dari Bahan Bekas
+                    </h2>
+                </div>
+
+                <p class="text-sm text-gray-500 max-w-md leading-relaxed">
+                    Hubungi penjual untuk mengetahui harga dan ketersediaannya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+
+                <!-- PRODUK 1 -->
+                <article class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-60 overflow-hidden bg-green-50">
+                        <img
+                            src="katalog1.jpeg"
+                            alt="Tas anyaman dari bungkus kopi bekas"
+                            class="product-image w-full h-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <span class="inline-block text-xs font-semibold text-green-700 bg-green-100 px-3 py-1.5 rounded-full">
+                            Daur Ulang Plastik
+                        </span>
+
+                        <h3 class="text-lg font-bold text-gray-800 mt-4 mb-2">
+                            Tas Bungkus Kopi
+                        </h3>
+
+                        <p class="text-sm text-gray-500 leading-relaxed min-h-[84px]">
+                            Tas unik hasil anyaman bungkus kopi bekas yang diolah menjadi aksesori yang bermanfaat.
+                        </p>
+
+                        <p class="text-sm font-semibold text-[#2D8659] mb-4">
+                            Harga: hubungi penjual
+                        </p>
+
+                        <div class="flex flex-col gap-2">
+                            <a
+                                href="https://wa.me/6281234567890?text=Halo%20BARDUKARI%2C%20saya%20tertarik%20dengan%20Tas%20Bungkus%20Kopi."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-whatsapp-line text-lg"></i>
+                                Pesan via WhatsApp
+                            </a>
+
+                            <a
+                                href="https://shopee.co.id/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-shopping-bag-3-line text-lg"></i>
+                                Lihat di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUK 2 -->
+                <article class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-60 overflow-hidden bg-blue-50">
+                        <img
+                            src="katalog2.jpeg"
+                            alt="Tirai bunga dari botol bekas"
+                            class="product-image w-full h-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <span class="inline-block text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1.5 rounded-full">
+                            Kreasi Botol Bekas
+                        </span>
+
+                        <h3 class="text-lg font-bold text-gray-800 mt-4 mb-2">
+                            Tirai Bunga Botol Bekas
+                        </h3>
+
+                        <p class="text-sm text-gray-500 leading-relaxed min-h-[84px]">
+                            Botol plastik bekas yang diubah menjadi tirai bunga warna-warni, cocok untuk hiasan jendela.
+                        </p>
+
+                        <p class="text-sm font-semibold text-[#2D8659] mb-4">
+                            Harga: hubungi penjual
+                        </p>
+
+                        <div class="flex flex-col gap-2">
+                            <a
+                                href="https://wa.me/6281234567890?text=Halo%20BARDUKARI%2C%20saya%20tertarik%20dengan%20Tirai%20Bunga%20Botol%20Bekas."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-whatsapp-line text-lg"></i>
+                                Pesan via WhatsApp
+                            </a>
+
+                            <a
+                                href="https://shopee.co.id/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-shopping-bag-3-line text-lg"></i>
+                                Lihat di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUK 3 -->
+                <article class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-60 overflow-hidden bg-amber-50">
+                        <img
+                            src="images/dompet-plastik.jpg"
+                            alt="Dompet dari plastik bungkus jajanan bekas"
+                            class="product-image w-full h-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <span class="inline-block text-xs font-semibold text-amber-700 bg-amber-100 px-3 py-1.5 rounded-full">
+                            Kreasi Kemasan Bekas
+                        </span>
+
+                        <h3 class="text-lg font-bold text-gray-800 mt-4 mb-2">
+                            Dompet Plastik Jajanan
+                        </h3>
+
+                        <p class="text-sm text-gray-500 leading-relaxed min-h-[84px]">
+                            Kemasan jajanan bekas yang dirangkai menjadi dompet dengan motif dan warna menarik.
+                        </p>
+
+                        <p class="text-sm font-semibold text-[#2D8659] mb-4">
+                            Harga: hubungi penjual
+                        </p>
+
+                        <div class="flex flex-col gap-2">
+                            <a
+                                href="https://wa.me/6281234567890?text=Halo%20BARDUKARI%2C%20saya%20tertarik%20dengan%20Dompet%20Plastik%20Jajanan."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-whatsapp-line text-lg"></i>
+                                Pesan via WhatsApp
+                            </a>
+
+                            <a
+                                href="https://shopee.co.id/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-shopping-bag-3-line text-lg"></i>
+                                Lihat di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUK 4 -->
+                <article class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-60 overflow-hidden bg-lime-50">
+                        <img
+                            src="images/eco-enzyme.jpg"
+                            alt="Eco enzyme dalam botol"
+                            class="product-image w-full h-full object-cover"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="p-5">
+                        <span class="inline-block text-xs font-semibold text-lime-700 bg-lime-100 px-3 py-1.5 rounded-full">
+                            Olahan Sampah Organik
+                        </span>
+
+                        <h3 class="text-lg font-bold text-gray-800 mt-4 mb-2">
+                            Eco Enzyme
+                        </h3>
+
+                        <p class="text-sm text-gray-500 leading-relaxed min-h-[84px]">
+                            Cairan hasil fermentasi bahan organik seperti kulit buah dan sisa sayuran yang dikemas dalam botol.
+                        </p>
+
+                        <p class="text-sm font-semibold text-[#2D8659] mb-4">
+                            Harga: hubungi penjual
+                        </p>
+
+                        <div class="flex flex-col gap-2">
+                            <a
+                                href="https://wa.me/6281234567890?text=Halo%20BARDUKARI%2C%20saya%20tertarik%20dengan%20Eco%20Enzyme."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-whatsapp-line text-lg"></i>
+                                Pesan via WhatsApp
+                            </a>
+
+                            <a
+                                href="https://shopee.co.id/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex justify-center items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-sm font-semibold transition"
+                            >
+                                <i class="ri-shopping-bag-3-line text-lg"></i>
+                                Lihat di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMASI TAMBAHAN -->
+    <section class="bg-green-50 py-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-5">
+                <i class="ri-heart-3-line text-3xl text-[#2D8659]"></i>
+            </div>
+
+            <h2 class="text-2xl font-bold text-[#2D8659] mb-4">
+                Dukung Produk Kreatif Lokal
+            </h2>
+
+            <p class="text-sm md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                Dengan memilih produk hasil daur ulang, kita ikut mendukung kreativitas masyarakat
+                dan mendorong pemanfaatan bahan bekas menjadi barang yang lebih bermanfaat.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- Tulisan BARDUKARI di kiri bawah sudah dihilangkan -->
+    <footer class="bg-white border-t border-gray-100 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+
+            <p class="text-xs text-gray-500 text-center">
+                © 2026 Bardukari - Telkom University Purwokerto. All rights reserved.
+            </p>
+
+            <a
+                href="bardukari.html#home"
+                class="text-sm font-semibold text-[#2D8659] hover:underline"
+            >
+                <i class="ri-arrow-left-line mr-1"></i>
+                Kembali ke Beranda
+            </a>
+
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT MENU MOBILE -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+
+            const isHidden = mobileMenu.classList.contains('hidden');
+            const icon = menuBtn.querySelector('i');
+
+            menuBtn.setAttribute('aria-expanded', String(!isHidden));
+
+            if (isHidden) {
+                icon.className = 'ri-menu-line text-2xl';
+                menuBtn.setAttribute('aria-label', 'Buka menu');
+            } else {
+                icon.className = 'ri-close-line text-2xl';
+                menuBtn.setAttribute('aria-label', 'Tutup menu');
+            }
+        });
+    </script>
+
+</body>
+</html>
