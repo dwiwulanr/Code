@@ -52,105 +52,95 @@
 
 <body class="bg-white text-gray-800 antialiased">
 
-    <!-- ================= NAVBAR ================= -->
-    <header class="w-full px-4 md:px-8 py-4 flex items-center justify-between gap-4 bg-white shadow-sm sticky top-0 z-50">
+   
+    <!-- ================= NAVBAR EDUKASI ================= -->
+    <header class="w-full px-6 pt-5 pb-3 flex items-center justify-between gap-3 bg-white">
 
         <!-- LOGO -->
-        <a href="bardukari.html" class="flex-shrink-0">
-            <h1 class="text-2xl font-black text-[#2D8659] leading-none tracking-tight">
+        <a href="bardukari.html#home" class="flex-shrink-0 w-[210px] ml-2 translate-y-0">
+            <h1 class="text-2xl font-black text-[#5CB883] leading-none tracking-tight translate-y-1 ">
                 BARDUKARI
             </h1>
-
             <p class="text-[8px] font-bold text-[#5CB883] tracking-widest uppercase mt-1">
                 Banjaranyar Daur Ulang & Kreasi
             </p>
         </a>
 
-        <!-- MENU NAVIGASI -->
-        <nav class="hidden md:flex items-center space-x-5 lg:space-x-6 text-sm font-semibold text-gray-600">
-
-            <a href="bardukari.html#home" class="nav-link">
-                Beranda
-            </a>
-
-            <a href="edukasi.html" class="text-[#2D8659]">
-                Edukasi
-            </a>
-
-            <a href="katalog.html" class="nav-link">
-                Katalog
-            </a>
-
-            <a href="kontak.html" class="nav-link">
-                Kontak
-            </a>
-
-            <a href="about.html" class="nav-link">
-                Tentang Kami
-            </a>
-
+        <!-- MENU DESKTOP -->
+        <nav class="hidden lg:flex items-center gap-5 ml-6 mt-1 text-sm font-semibold text-gray-600 flex-shrink-0">
+            <a href="bardukari.html#home" class="nav-link">Beranda</a>
+            <a href="edukasi.html" class="text-[#2D8659]">Edukasi</a>
+            <a href="katalog.html" class="nav-link">Katalog</a>
+            <a href="kontak.html" class="nav-link">Kontak</a>
+            <a href="about.html" class="nav-link">Tentang Kami</a>
         </nav>
 
         <!-- SEARCH DAN SHOPEE -->
-        <div class="hidden md:flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-3 flex-1 min-w-0 ml-2">
 
-            <button
-                id="search-btn"
-                type="button"
-                aria-label="Buka pencarian"
-                class="flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 text-gray-500 hover:border-[#2D8659] transition text-sm"
-            >
-                <i class="ri-search-line text-lg"></i>
-                <span>Cari...</span>
-            </button>
+            <div class="flex-1 min-w-[150px] max-w-[400px]">
+                <button id="search-btn" type="button"
+                    aria-label="Buka pencarian"
+                    aria-expanded="false"
+                    class="w-full flex items-center gap-3 px-5 py-3 rounded-full border border-gray-300 bg-gray-50 text-gray-500 hover:border-[#2D8659] transition text-sm">
+                    <i class="ri-search-line text-xl"></i>
+                    <span>Cari...</span>
+                </button>
 
-            <a
-                href="https://shopee.co.id/"
-                target="_blank"
+                <form id="search-form" class="hidden relative w-full">
+                    <i class="ri-search-line text-lg text-gray-500 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                    <input id="search-input" type="search" placeholder="Cari..."
+                        autocomplete="off"
+                        class="w-full pl-11 pr-10 py-3 rounded-full border border-[#2D8659] bg-gray-50 text-sm outline-none focus:ring-2 focus:ring-[#2D8659]/20">
+                    <button id="close-search" type="button"
+                        aria-label="Tutup pencarian"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-red-500">
+                        <i class="ri-close-line text-xl"></i>
+                    </button>
+                </form>
+            </div>
+
+            <a href="https://shopee.co.id/" target="_blank"
                 rel="noopener noreferrer"
-                class="bg-[#2D8659] text-white px-5 py-2.5 rounded-full font-bold hover:bg-[#1E6240] transition text-sm whitespace-nowrap"
-            >
-                <i class="ri-shopping-bag-3-line mr-1"></i>
+                class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-[#2D8659] text-white px-4 py-3 rounded-full font-bold hover:bg-[#1E6240] transition text-sm shadow-md whitespace-nowrap">
+                <i class="ri-shopping-bag-2-line"></i>
                 Beli di Shopee
             </a>
-
         </div>
 
         <!-- MENU MOBILE -->
-        <button
-            id="menu-btn"
-            type="button"
+        <button id="menu-btn" type="button"
             aria-label="Buka menu"
-            class="md:hidden text-gray-700 p-2"
-        >
+            aria-expanded="false"
+            class="lg:hidden p-2 text-gray-700 hover:text-[#2D8659]">
             <i class="ri-menu-line text-2xl"></i>
         </button>
-
     </header>
 
 
-    <!-- ================= PENCARIAN ================= -->
-    <div id="search-panel" class="hidden px-6 py-4 bg-white border-b border-gray-100">
-        <form id="search-form" class="max-w-xl mx-auto flex gap-2">
 
-            <input
-                id="search-input"
-                type="search"
-                placeholder="Cari materi edukasi..."
-                class="flex-1 min-w-0 px-4 py-3 rounded-full border border-gray-300 text-sm outline-none focus:border-[#2D8659]"
-            >
+        <!-- ================= PENCARIAN ================= -->
+        <div id="search-panel" class="hidden px-6 py-4 bg-white border-b border-gray-100">
+            <form id="search-form" class="max-w-xl mx-auto flex gap-2">
 
-            <button
-                type="submit"
-                class="bg-[#2D8659] text-white px-5 py-3 rounded-full font-semibold"
-            >
-                Cari
-            </button>
+                <input
+                    id="search-input"
+                    type="search"
+                    placeholder="Cari materi edukasi..."
+                    class="flex-1 min-w-0 px-4 py-3 rounded-full border border-gray-300 text-sm outline-none focus:border-[#2D8659]"
+                >
 
-        </form>
-    </div>
+                <button
+                    type="submit"
+                    class="bg-[#2D8659] text-white px-5 py-3 rounded-full font-semibold"
+                >
+                    Cari
+                </button>
 
-    <p id="search-result" class="hidden text-sm text-gray-500 text-center px-4 py-3"></p>
+            </form>
+        </div>
+
+        <p id="search-result" class="hidden text-sm text-gray-500 text-center px-4 py-3"></p>
 
 
     <!-- ================= MENU MOBILE ================= -->
