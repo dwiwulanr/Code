@@ -1,333 +1,486 @@
+
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Bardukari - Banjaranyar Daur Ulang & Kreasi</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="#" class="logo">Bardukari</a>
-        </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-line"></i>
-        </div>
-      </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#home">BERANDA</a></li>
-        <li><a href="#about">TENTANG KAMI</a></li>
-        <li><a href="edukasi.html">EDUKASI</a></li>
-        <li><a href="#package">KATALOG</a></li>
-        <li><a href="#contact">KONTAK</a></li>
-        <li><a href="https://shopee.co.id/">BELI DI SHOPEE</a></li>
-      </ul>
-      <div class="nav__btns">
-        <button class="btn">Kunjungi Shopee</button>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - BARDUKARI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #2D8659;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(45, 134, 89, 0.10);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+<!-- ================= NAVBAR ================= -->
+<header class="w-full px-6 pt-5 pb-3 flex items-center justify-between gap-3 bg-white">
+
+    <!-- LOGO -->
+    <a href="bardukari.html#home" class="flex-shrink-0 w-[210px] ml-2">
+        <h1 class="text-2xl font-black text-[#5CB883] leading-none tracking-tight translate-y-1">
+            BARDUKARI
+        </h1>
+        <p class="text-[8px] font-bold text-[#5CB883] tracking-widest uppercase mt-1">
+            Banjaranyar Daur Ulang & Kreasi
+        </p>
+    </a>
+
+    <!-- MENU DESKTOP -->
+    <nav class="hidden lg:flex items-center gap-5 ml-6 mt-1 text-sm font-semibold text-gray-600 flex-shrink-0">
+        <a href="bardukari.html#home" class="nav-link">Beranda</a>
+        <a href="edukasi.html" class="nav-link">Edukasi</a>
+        <a href="katalog.html" class="nav-link">Katalog</a>
+        <a href="kontak.html" class="nav-link">Kontak</a>
+        <a href="about.html" class="text-[#2D8659]">Tentang Kami</a>
     </nav>
 
-    <header id="home">
-      <div class="header__container">
-        <div class="header__content">
-          <p>DARI SAMPAH MENJADI BERKAH</p>
-          <h1>Inovasi Pengelolaan Sampah Banjaranyar</h1>
-          <div class="header__btns">
-            <button class="btn">Mulai Belajar</button>
-            <a href="#about">
-              <span><i class="ri-play-circle-fill"></i></span>
-            </a>
-          </div>
-        </div>
-        <div class="header__image">
-          <img src="assets/header.png" alt="Desa Banjaranyar" />
-        </div>
-      </div>
-    </header>
+    <!-- SEARCH DAN SHOPEE -->
+    <div class="hidden lg:flex items-center gap-3 flex-1 min-w-0 ml-2">
+        <div class="flex-1 min-w-[150px] max-w-[400px]">
+            <button id="search-btn" type="button"
+                aria-label="Buka pencarian"
+                aria-expanded="false"
+                class="w-full flex items-center gap-3 px-5 py-3 rounded-full border border-gray-300 bg-gray-50 text-gray-500 hover:border-[#2D8659] transition text-sm">
+                <i class="ri-search-line text-xl"></i>
+                <span>Cari...</span>
+            </button>
 
-    <section class="section__container destination__container" id="about">
-      <h2 class="section__header">Potensi Daur Ulang Warga</h2>
-      <p class="section__description">
-        Mengubah sampah yang mengganggu menjadi produk bernilai guna dan peluang ekonomi.
-      </p>
-      <div class="destination__grid">
-        <div class="destination__card">
-          <img src="assets/barang1.jpg" alt="Tas Plastik" />
-          <div class="destination__card__details">
-            <div>
-              <h4>Kerajinan Plastik</h4>
-              <p>Tas dari bungkus kopi sachet</p>
-            </div>
-            <div class="destination__rating">
-              <span><i class="ri-star-fill"></i></span>
-              Kreatif
-            </div>
-          </div>
+            <form id="search-form" class="hidden relative w-full">
+                <i class="ri-search-line text-lg text-gray-500 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                <input id="search-input" type="search" placeholder="Cari..."
+                    autocomplete="off"
+                    class="w-full pl-11 pr-10 py-3 rounded-full border border-[#2D8659] bg-gray-50 text-sm outline-none focus:ring-2 focus:ring-[#2D8659]/20">
+                <button id="close-search" type="button"
+                    aria-label="Tutup pencarian"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-red-500">
+                    <i class="ri-close-line text-xl"></i>
+                </button>
+            </form>
         </div>
-        <div class="destination__card">
-          <img src="assets/barang2.jpg" alt="Bunga Plastik" />
-          <div class="destination__card__details">
-            <div>
-              <h4>Dekorasi Unik</h4>
-              <p>Bunga dan kitiran dari plastik</p>
-            </div>
-            <div class="destination__rating">
-              <span><i class="ri-star-fill"></i></span>
-              Estetik
-            </div>
-          </div>
-        </div>
-        <div class="destination__card">
-          <img src="assets/barang3.jpg" alt="Eco-Enzyme" />
-          <div class="destination__card__details">
-            <div>
-              <h4>Pengolahan Organik</h4>
-              <p>Pupuk kompos & Eco-enzyme</p>
-            </div>
-            <div class="destination__rating">
-              <span><i class="ri-star-fill"></i></span>
-              Bermanfaat
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- <section class="section__container journey__container" id="tour">
-      <h2 class="section__header">Penerapan Nilai Pancasila</h2>
-      <p class="section__description">
-        Mengubah pola pikir peduli sampah melalui penguatan nilai-nilai dasar negara.
-      </p>
-      <div class="journey__grid">
-        <div class="journey__card">
-          <div class="journey__card__bg">
-            <span><i class="ri-leaf-line"></i></span>
-            <h4>Kepedulian Lingkungan</h4>
-          </div>
-          <div class="journey__card__content">
-            <span><i class="ri-leaf-line"></i></span>
-            <h4>Tanggung Jawab Sila ke-1 & ke-2</h4>
-            <p>
-              Menjaga lingkungan adalah tanggung jawab atas ciptaan Tuhan, serta kepedulian terhadap kesehatan sesama warga dari bahaya asap pembakaran.
-            </p>
-          </div>
-        </div>
-        <div class="journey__card">
-          <div class="journey__card__bg">
-            <span><i class="ri-team-line"></i></span>
-            <h4>Gotong Royong & Musyawarah</h4>
-          </div>
-          <div class="journey__card__content">
-            <span><i class="ri-team-line"></i></span>
-            <h4>Sinergi Sila ke-3 & ke-4</h4>
-            <p>
-              Bank sampah dan kegiatan daur ulang dikelola bersama melalui musyawarah desa agar program berjalan efektif dan berkelanjutan.
-            </p>
-          </div>
-        </div>
-        <div class="journey__card">
-          <div class="journey__card__bg">
-            <span><i class="ri-scales-3-line"></i></span>
-            <h4>Keadilan Ekonomi</h4>
-          </div>
-          <div class="journey__card__content">
-            <span><i class="ri-scales-3-line"></i></span>
-            <h4>Pemberdayaan Sila ke-5</h4>
-            <p>
-              Memastikan manfaat ekonomi dari penjualan produk daur ulang dapat dirasakan secara adil oleh warga yang terlibat dalam pengelolaan UMKM.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
+        <a href="https://shopee.co.id/" target="_blank"
+            rel="noopener noreferrer"
+            class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-[#2D8659] text-white px-4 py-3 rounded-full font-bold hover:bg-[#1E6240] transition text-sm shadow-md whitespace-nowrap">
+            <i class="ri-shopping-bag-2-line"></i>
+            Beli di Shopee
+        </a>
+    </div>
 
-    <section class="section__container showcase__container" id="package">
-      <div class="showcase__image">
-        <img src="assets/showcase.jpeg" alt="Warga Banjaranyar" />
-      </div>
-      <div class="showcase__content">
-        <h4>TENTANG BARDUKARI</h4>
-        <p>
-          Penumpukan sampah di Desa Banjaranyar, Kecamatan Sokaraja akibat terbatasnya TPA mendorong warga mengambil jalan pintas dengan membakar sampah, yang mengganggu kualitas udara dan berisiko bagi kesehatan. Padahal, sampah plastik maupun organik memiliki potensi ekonomi yang besar jika dikelola dengan baik.
+    <!-- MENU MOBILE -->
+    <button id="menu-btn" type="button"
+        aria-label="Buka menu"
+        aria-expanded="false"
+        class="lg:hidden p-2 text-gray-700 hover:text-[#2D8659]">
+        <i class="ri-menu-line text-2xl"></i>
+    </button>
+</header>
+
+<!-- ================= MENU MOBILE ================= -->
+<nav id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4">
+    <a href="bardukari.html#home" class="block text-sm font-semibold text-gray-700">Beranda</a>
+    <a href="edukasi.html" class="block text-sm font-semibold text-gray-700">Edukasi</a>
+    <a href="katalog.html" class="block text-sm font-semibold text-gray-700">Katalog</a>
+    <a href="kontak.html" class="block text-sm font-semibold text-gray-700">Kontak</a>
+    <a href="about.html" class="block text-sm font-semibold text-[#2D8659]">Tentang Kami</a>
+
+    <form id="mobile-search-form" class="flex gap-2 pt-2">
+        <input id="mobile-search-input" type="search"
+            placeholder="Cari produk..."
+            class="flex-1 min-w-0 px-4 py-3 rounded-full border border-gray-300 text-sm outline-none focus:border-[#2D8659]">
+        <button type="submit" aria-label="Cari"
+            class="bg-[#2D8659] text-white px-4 rounded-full">
+            <i class="ri-search-line text-lg"></i>
+        </button>
+    </form>
+
+    <a href="https://shopee.co.id/" target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-[#2D8659] pt-2">
+        <i class="ri-shopping-bag-2-line"></i>
+        Beli di Shopee
+    </a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="bg-[linear-gradient(to_bottom,#D4F0E0_0%,#EBF8F1_55%,white_100%)] px-6 pt-16 pb-24 md:pt-20 md:pb-28">
+    <div class="max-w-5xl mx-auto text-center">
+
+        <div class="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm mb-6">
+            <i class="ri-team-line text-2xl text-[#2D8659]"></i>
+            <span class="text-sm md:text-base font-bold text-[#2D8659]">
+                Tentang Kami
+            </span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-[#5CB883] leading-tight mb-6">
+            Mengenal Lebih Dekat BARDUKARI
+        </h2>
+
+        <p class="max-w-3xl mx-auto text-sm md:text-lg text-gray-600 leading-relaxed mb-8">
+            Banjaranyar Daur Ulang & Kreasi hadir sebagai media informasi
+            untuk mengenalkan pemanfaatan barang bekas, edukasi pengelolaan
+            sampah, dan berbagai produk kreatif yang memiliki nilai guna.
         </p>
-        <p>
-          Bardukari hadir sebagai website edukasi pengolahan sampah sekaligus platform penjualan digital. Kami berupaya memberikan edukasi untuk mengatasi anggapan warga bahwa daur ulang dan pemasaran digital itu rumit.
+
+        <a href="#perkenalan"
+            class="inline-flex items-center justify-center gap-3 bg-[#2D8659] text-white px-10 py-4 rounded-full text-base font-bold hover:bg-[#1E6240] transition shadow-md">
+            Kenali BARDUKARI
+            <i class="ri-arrow-down-line text-xl"></i>
+        </a>
+
+    </div>
+</section>
+
+<!-- ================= PERKENALAN BARDUKARI ================= -->
+<section id="perkenalan" class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+            <!-- GAMBAR -->
+            <div class="relative">
+                <div class="rounded-3xl overflow-hidden bg-green-50">
+                    <img src="images/foto-kegiatan.jpg"
+                        alt="Kegiatan BARDUKARI"
+                        class="w-full h-[300px] md:h-[430px] object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/900x650/D4F0E0/2D8659?text=BARDUKARI';">
+                </div>
+
+                <div class="absolute -bottom-5 right-4 md:right-8 bg-white rounded-2xl shadow-lg p-4 md:p-5">
+                    <p class="text-xs text-gray-500 mb-1">BARDUKARI</p>
+                    <p class="font-bold text-[#2D8659] text-sm md:text-base">
+                        Daur Ulang & Kreasi
+                    </p>
+                </div>
+            </div>
+
+            <!-- TEKS -->
+            <div class="pt-4 lg:pt-0">
+                <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest mb-3">
+                    Siapa Kami?
+                </p>
+
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 leading-tight mb-5">
+                    Mengenalkan Potensi di Balik Barang Bekas
+                </h2>
+
+                <p class="text-sm md:text-base text-gray-500 leading-relaxed mb-4">
+                    BARDUKARI merupakan singkatan dari Banjaranyar Daur Ulang
+                    & Kreasi. Website ini dikembangkan untuk memperkenalkan
+                    informasi tentang pengelolaan sampah dan pemanfaatan
+                    barang bekas menjadi sesuatu yang lebih bermanfaat.
+                </p>
+
+                <p class="text-sm md:text-base text-gray-500 leading-relaxed mb-6">
+                    Melalui halaman edukasi, katalog, dan kontak, kami ingin
+                    memudahkan pengunjung mengenal BARDUKARI serta menemukan
+                    informasi yang berkaitan dengan kreativitas dan kepedulian
+                    terhadap lingkungan.
+                </p>
+
+                <div class="flex items-start gap-3 bg-green-50 rounded-2xl p-5">
+                    <i class="ri-leaf-line text-2xl text-[#2D8659]"></i>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Kami percaya bahwa barang bekas masih memiliki potensi
+                        untuk dimanfaatkan kembali melalui ide dan kreativitas.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= TIM KAMI ================= -->
+<section id="tim" class="bg-gray-50 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest mb-3">
+                Di Balik BARDUKARI
+            </p>
+
+            <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-4">
+                Kenalan dengan Tim Kami
+            </h2>
+
+            <p class="text-sm md:text-base text-gray-500 leading-relaxed">
+                BARDUKARI dikembangkan melalui kerja sama tim dalam menyusun
+                konsep, merancang tampilan, dan membangun website. Setiap
+                proses menjadi pengalaman untuk belajar dan mengembangkan ide
+                bersama.
+            </p>
+        </div>
+
+        <!-- FOTO KELOMPOK -->
+        <div class="max-w-5xl mx-auto">
+            <div class="rounded-3xl overflow-hidden bg-green-100 shadow-sm">
+                <img src="images/foto-kelompok.jpg"
+                    alt="Foto kelompok pengembang BARDUKARI"
+                    class="w-full h-[280px] md:h-[500px] object-cover"
+                    onerror="this.onerror=null;this.src='https://placehold.co/1200x700/D4F0E0/2D8659?text=Foto+Tim+BARDUKARI';">
+            </div>
+
+            <div class="text-center mt-7">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">
+                    Bersama Mengembangkan BARDUKARI
+                </h3>
+
+                <p class="text-sm md:text-base text-gray-500 leading-relaxed max-w-2xl mx-auto">
+                    Melalui kerja sama dan ide dari setiap anggota, kami
+                    berupaya menghadirkan website yang informatif, mudah
+                    digunakan, dan bermanfaat bagi pengunjung.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= FITUR WEBSITE ================= -->
+<section id="fitur" class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <p class="text-sm font-bold text-[#2D8659] uppercase tracking-widest mb-3">
+                Jelajahi Website
+            </p>
+
+            <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-4">
+                Apa yang Ada di BARDUKARI?
+            </h2>
+
+            <p class="text-sm md:text-base text-gray-500 leading-relaxed">
+                BARDUKARI menyediakan beberapa bagian yang dapat kamu
+                jelajahi untuk mengenal informasi dan produk yang tersedia.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+            <!-- EDUKASI -->
+            <article class="feature-card border border-green-100 rounded-3xl p-7 bg-white shadow-sm">
+                <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mb-6">
+                    <i class="ri-book-open-line text-3xl text-[#2D8659]"></i>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-800 mb-3">
+                    Edukasi Lingkungan
+                </h3>
+
+                <p class="text-sm text-gray-500 leading-relaxed mb-6">
+                    Pelajari jenis sampah, cara memilah sampah, prinsip 3R,
+                    dan berbagai informasi untuk mendukung kebiasaan yang
+                    lebih ramah lingkungan.
+                </p>
+
+                <a href="edukasi.html"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-[#2D8659] hover:underline">
+                    Jelajahi Edukasi
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- KATALOG -->
+            <article class="feature-card border border-green-100 rounded-3xl p-7 bg-white shadow-sm">
+                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+                    <i class="ri-shopping-bag-3-line text-3xl text-blue-700"></i>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-800 mb-3">
+                    Katalog Produk
+                </h3>
+
+                <p class="text-sm text-gray-500 leading-relaxed mb-6">
+                    Kenali berbagai produk yang ditampilkan di katalog
+                    BARDUKARI dan temukan informasi produk yang tersedia.
+                </p>
+
+                <a href="katalog.html"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-[#2D8659] hover:underline">
+                    Lihat Katalog
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- KONTAK -->
+            <article class="feature-card border border-green-100 rounded-3xl p-7 bg-white shadow-sm">
+                <div class="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center mb-6">
+                    <i class="ri-customer-service-2-line text-3xl text-amber-700"></i>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-800 mb-3">
+                    Hubungi Kami
+                </h3>
+
+                <p class="text-sm text-gray-500 leading-relaxed mb-6">
+                    Sampaikan pertanyaan, masukan, atau ajakan kerja sama
+                    melalui halaman kontak BARDUKARI.
+                </p>
+
+                <a href="kontak.html"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-[#2D8659] hover:underline">
+                    Hubungi Kami
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= TUJUAN DAN HARAPAN ================= -->
+<section class="bg-[#2D8659] py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-white/15 flex items-center justify-center mb-5">
+            <i class="ri-leaf-line text-4xl text-white"></i>
+        </div>
+
+        <p class="text-sm font-bold text-green-100 uppercase tracking-widest mb-3">
+            Tujuan dan Harapan
         </p>
-        <div class="showcase__btn">
-          <button class="btn">
+
+        <h2 class="text-2xl md:text-4xl font-bold text-white mb-5">
+            Bersama Membangun Kepedulian terhadap Lingkungan
+        </h2>
+
+        <p class="text-sm md:text-base text-green-50 leading-relaxed max-w-3xl mx-auto mb-8">
+            Kami berharap BARDUKARI dapat menjadi media yang membantu
+            pengunjung mengenal pengelolaan sampah dan potensi pemanfaatan
+            barang bekas. Melalui informasi dan kreativitas, kami ingin
+            mengajak lebih banyak orang untuk memulai kebiasaan sederhana
+            yang bermanfaat bagi lingkungan.
+        </p>
+
+        <a href="edukasi.html"
+            class="inline-flex items-center gap-2 bg-white text-[#2D8659] px-7 py-3 rounded-full text-sm font-bold hover:bg-green-50 transition">
             Mulai Belajar
-            <span><i class="ri-arrow-right-line"></i></span>
-          </button>
-        </div>
-      </div>
-    </section>
+            <i class="ri-arrow-right-line"></i>
+        </a>
 
-    <section class="section__container banner__container">
-      <div class="banner__card">
-        <h4>6</h4>
-        <p>Anggota Tim Riset</p>
-      </div>
-      <div class="banner__card">
-        <h4>4</h4>
-        <p>Narasumber Warga</p>
-      </div>
-      <div class="banner__card">
-        <h4>100%</h4>
-        <p>Semangat Gotong Royong</p>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section class="section__container discover__container">
-      <h2 class="section__header">Langkah Pengelolaan Sampah</h2>
-      <p class="section__description">
-        Dari pemilahan di rumah tangga hingga menjadi produk siap jual.
-      </p>
-      <div class="discover__grid">
-        <div class="discover__card">
-          <span><i class="ri-recycle-line"></i></span>
-          <h4>Pemilahan Dasar</h4>
-          <p>
-            Memisahkan sampah plastik dan daun kering agar mudah dikelola dan disetorkan ke bank sampah tanpa harus dibakar.
-          </p>
-        </div>
-        <div class="discover__card">
-          <span><i class="ri-tools-line"></i></span>
-          <h4>Proses Kreatif</h4>
-          <p>
-            Mengolah bahan mentah menjadi produk kerajinan inovatif atau eco-enzyme dengan pendampingan dan edukasi berkelanjutan.
-          </p>
-        </div>
-        <div class="discover__card">
-          <span><i class="ri-shopping-bag-3-line"></i></span>
-          <h4>Pemasaran Digital</h4>
-          <p>
-            Membuka peluang UMKM lokal dengan memasarkan produk daur ulang melalui platform seperti Shopee agar sesuai perkembangan zaman.
-          </p>
-        </div>
-      </div>
-    </section>
+<!-- ================= FOOTER ================= -->
+<footer class="border-t border-gray-100 py-6 bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <p class="text-xs text-gray-500 text-center">
+            © 2026 BARDUKARI - Telkom University Purwokerto. All rights reserved.
+        </p>
 
-    <section class="section__container client__container">
-      <h2 class="section__header">Suara Warga Banjaranyar</h2>
-      <p class="section__description">
-        Pandangan masyarakat setempat mengenai permasalahan dan potensi sampah di lingkungan mereka.
-      </p>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="client__card">
-              <div class="client__content">
-                <p>
-                  "Kebanyakan warga kesulitan untuk mengolah sampah karena belum tahu caranya dan kurang mendapat edukasi mengenai pemanfaatan sampah, terutama sampah plastik."
-                </p>
-              </div>
-              <div class="client__details">
-                <img src="assets/Wawancara1.jpg" alt="Bapak Sudirman" />
-                <div>
-                  <h4>Bapak Sudirman</h4>
-                  <h5>Warga Banjaranyar</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="client__card">
-              <div class="client__content">
-                <p>
-                  "Sebenarnya kami tertarik mengolah sampah menjadi barang bermanfaat dan bernilai jual, tetapi niat itu belum terwujud karena kurangnya ajakan."
-                </p>
-              </div>
-              <div class="client__details">
-                <img src="assets/Wawancara2.jpg" alt="Warga" />
-                <div>
-                  <h4>Ibu Rumah Tangga</h4>
-                  <h5>Warga Banjaranyar</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="client__card">
-              <div class="client__content">
-                <p>
-                  "Niat berjualan secara daring belum terlaksana karena dianggap rumit. Kami mendukung adanya sosialisasi agar penjualan dapat berkelanjutan."
-                </p>
-              </div>
-              <div class="client__details">
-                <img src="assets/Wawancara3.jpg" alt="Ibu Diana" />
-                <div>
-                  <h4>Ibu Diana</h4>
-                  <h5>Warga Banjaranyar</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <a href="bardukari.html#home"
+            class="text-sm font-semibold text-[#2D8659] hover:underline">
+            <i class="ri-arrow-left-line mr-1"></i>
+            Kembali ke Beranda
+        </a>
+    </div>
+</footer>
 
-    <footer id="contact">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <div class="footer__logo">
-            <a href="#" class="logo">Bardukari</a>
-          </div>
-          <p>
-            Proyek Riset Pancasila S1 Rekayasa Perangkat Lunak Telkom University Purwokerto tahun 2026. Mengintegrasikan nilai Pancasila untuk lingkungan yang lebih baik.
-          </p>
-          <ul class="footer__socials">
-            <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Tim Penyusun</h4>
-          <ul class="footer__links">
-            <li><a href="#">Felda Ardelia Oktrianti</a></li>
-            <li><a href="#">Ifah Yogiana Putri</a></li>
-            <li><a href="#">Dwi Wulan Ramadhani</a></li>
-            <li><a href="#">Livia Noorafni Fadilah</a></li>
-            <li><a href="#">Andhika Abipraya Saputra</a></li>
-            <li><a href="#">Dimas Naufal Nurfajri</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Hubungi Kami</h4>
-          <ul class="footer__links">
-            <li>
-              <a href="#">
-                <span><i class="ri-record-mail-line"></i></span> admin@bardukari.com
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span><i class="ri-map-pin-2-fill"></i></span> Banjaranyar, Sokaraja
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bar">
-        Copyright © 2026 Kelompok 3 S1 RPL Telkom University Purwokerto. All rights reserved.
-      </div>
-    </footer>
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+    // MENU MOBILE
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+
+            const isHidden = mobileMenu.classList.contains('hidden');
+
+            menuBtn.setAttribute('aria-expanded', String(!isHidden));
+            menuBtn.setAttribute('aria-label', isHidden ? 'Buka menu' : 'Tutup menu');
+
+            menuBtn.querySelector('i').className = isHidden
+                ? 'ri-menu-line text-2xl'
+                : 'ri-close-line text-2xl';
+        });
+    }
+
+    // SEARCH DESKTOP
+    const searchBtn = document.getElementById('search-btn');
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-input');
+    const closeSearch = document.getElementById('close-search');
+
+    function goToSearch(keyword) {
+        const value = keyword.trim();
+        if (!value) return;
+
+        window.location.href = 'katalog.html?search=' + encodeURIComponent(value);
+    }
+
+    if (searchBtn && searchForm && searchInput && closeSearch) {
+        searchBtn.addEventListener('click', () => {
+            searchBtn.classList.add('hidden');
+            searchForm.classList.remove('hidden');
+            searchInput.focus();
+        });
+
+        searchForm.addEventListener('submit', event => {
+            event.preventDefault();
+            goToSearch(searchInput.value);
+        });
+
+        function resetSearch() {
+            searchInput.value = '';
+            searchForm.classList.add('hidden');
+            searchBtn.classList.remove('hidden');
+        }
+
+        closeSearch.addEventListener('click', resetSearch);
+
+        searchInput.addEventListener('keydown', event => {
+            if (event.key === 'Escape') resetSearch();
+        });
+    }
+
+    // SEARCH MOBILE
+    const mobileSearchForm = document.getElementById('mobile-search-form');
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+
+    if (mobileSearchForm && mobileSearchInput) {
+        mobileSearchForm.addEventListener('submit', event => {
+            event.preventDefault();
+            goToSearch(mobileSearchInput.value);
+        });
+    }
+</script>
+
+</body>
 </html>
